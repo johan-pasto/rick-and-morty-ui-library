@@ -1,4 +1,4 @@
-# bitacora 1 — Análisis y planificación
+## bitacora 1 — Análisis y planificación
 
 **Fecha:** 19/11/2026
 
@@ -18,7 +18,7 @@
 
 ---
 
-# bitacora 2 — Preparación de espacio de trabajo
+## bitacora 2 — Preparación de espacio de trabajo
 
 **Fecha:** 19/11/2026
 
@@ -39,7 +39,7 @@
 - Se creo el AngularWorkspace despues de confirmar que todas las dependencias estaban listas.
 ---
 
-# bitacora 3 — Creacion de la libreria ui-lib
+## bitacora 3 — Creacion de la libreria ui-lib
 
 **Fecha:** 19/11/2026
 
@@ -52,9 +52,30 @@
 
 
 # Problemas y soluciones
-- Angular no se encontraba instalada previamente.
+- sin ningun problema.
 
 # Resultado
 - Se creo la libreria sin ningun problema o error en el codigo.
+
+---
+
+## bitacora 4 — Creacion de la aplicacion demo-app y primer commit
+
+**Fecha:** 19/11/2026
+
+# Actividades
+- Iniciar con la creación de la aplicacion que utilizara los componentes de la libreria.
+- crear el primer commit del proyecto.
+
+# Decisiones
+- Iniciar la creación de la aplicacion despues de haber verificado que todo este funcionando correctamente.
+- La creacion del primer commit para llevar el control de las modificaciones realizadas a futuro.
+
+
+# Problemas y soluciones
+- sin ningun problema.
+
+# Resultado
+- Se creo la aplicación y el commit sin ningun problema.
 
 ---

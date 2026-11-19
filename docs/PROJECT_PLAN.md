@@ -59,10 +59,10 @@ La aplicación debe integrar los componentes de la librería, permitir filtrar l
 - [x] Verificar Git.
 - [x] Preparar Visual Studio Code.
 - [x] Crear el Angular workspace.
-- [ ] Configurar los proyectos `ui-lib` y `demo-app`.
-- [ ] Configurar TypeScript strict.
-- [ ] Configurar Tailwind CSS v3.
-- [ ] Verificar que ambos proyectos puedan ejecutarse correctamente.
+- [x] Configurar los proyectos `ui-lib` y `demo-app`.
+- [x] Configurar TypeScript strict.
+- [x] Configurar Tailwind CSS v3.
+- [x] Verificar que ambos proyectos puedan ejecutarse correctamente.
 
 **Conceptos a comprender:**
 

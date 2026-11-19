@@ -1,6 +1,6 @@
 # Registro de uso de Inteligencia Artificial
 
-# Interacción 1: Análisis inicial del reto técnico
+## Interacción 1: Análisis inicial del reto técnico
 
 - **Fecha:** 19/11/2026
 - **Hora:** 12:00 p. m.
