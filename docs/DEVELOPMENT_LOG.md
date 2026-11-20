@@ -79,3 +79,45 @@
 - Se creo la aplicación y el commit sin ningun problema.
 
 ---
+
+## bitacora 5 — Compilacion de liberia y app, ademas de actualización de git
+
+**Fecha:** 19/11/2026
+
+# Actividades
+- Ejecutar los comandos:ng build ui-lib , ng build demo-app para la compilacion y empaquetacion.
+- actualizar el proyecto con un nuevo commit.
+
+# Decisiones
+- usar los comandos para verificar que la estructura de los proyectos sea compatible con el empaquetado de angular.
+- Usar un nuevo commit para guardar cambios realizados y controlar versiones del codigo.
+
+
+# Problemas y soluciones
+- sin ningun problema.
+
+# Resultado
+- se uso los comandos, y se creo el commit sin ningun problema en su proceso.
+
+---
+
+## bitacora 6 — Finalizacion del componente ui-button
+
+**Fecha:** 19/11/2026
+
+# Actividades
+- se creo el componente ui-button
+- Se configuro la "categoria" el disable, loading y sus tamaños.
+
+# Decisiones
+- desarrollar los diferentes requisitos que necesita el componente ui-button.
+- se agrego una funcion que evita el uso del boton si este se encuentra desabilitado o cargando.
+
+
+# Problemas y soluciones
+- sin ningun problema aunque se tuvo que realizar modificacion en el codigo y su documentacion mientras se construia.
+
+# Resultado
+- el componente ui-botton fue creado y los cambios actualizado en un commit.
+
+---

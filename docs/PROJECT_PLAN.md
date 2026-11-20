@@ -82,14 +82,14 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 
 # 2.1 — ui-button
 
-- [ ] Comprender los componentes standalone.
-- [ ] Comprender `input()` y `output()`.
-- [ ] Comprender `ChangeDetectionStrategy.OnPush`.
-- [ ] Definir los tipos necesarios.
-- [ ] Implementar el componente.
-- [ ] Implementar variantes y tamaños.
-- [ ] Implementar los estados disabled y loading.
-- [ ] Implementar el evento clicked.
+- [x] Comprender los componentes standalone.
+- [x] Comprender `input()` y `output()`.
+- [x] Comprender `ChangeDetectionStrategy.OnPush`.
+- [x] Definir los tipos necesarios.
+- [x] Implementar el componente.
+- [x] Implementar variantes y tamaños.
+- [x] Implementar los estados disabled y loading.
+- [x] Implementar el evento clicked.
 - [ ] Verificar su comportamiento.
 
 **Resultado esperado:** Botón reutilizable, correctamente tipado y funcional.

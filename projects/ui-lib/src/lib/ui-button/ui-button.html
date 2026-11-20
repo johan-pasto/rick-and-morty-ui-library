@@ -1,0 +1,15 @@
+<button
+  type="button"
+  class="inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2"
+  [class]="variantClasses() + ' ' + sizeClasses()"
+  [disabled]="disabled() || loading()"
+  [attr.aria-busy]="loading()"
+  (click)="handleClick()"
+>
+  @if (loading()) {
+    <span class="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"
+    aria-hidden="true"></span>
+  } 
+    {{ label() }}
+  
+</button>
