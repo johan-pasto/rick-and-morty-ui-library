@@ -121,3 +121,136 @@
 - el componente ui-botton fue creado y los cambios actualizado en un commit.
 
 ---
+
+## bitacora 7 — Finalizacion del resto de componentes
+
+**Fecha:** 19/11/2026
+
+# Actividades
+- se creo el componente ui-card, ui-select, ui-table
+- Se configuro los idependientemente cada componente.
+
+# Decisiones
+- desarrollar los diferentes componentes.
+- reutilizar la "estructura" del ui-botton para crear el resto de componentes.
+
+
+# Problemas y soluciones
+- sin ningun problema.
+
+# Resultado
+- el resto de componentesfueron creados y los cambios actualizados en un commit.
+
+---
+
+## bitacora 8 — Pruebas
+
+**Fecha:** 20/11/2026
+
+# Actividades
+- Se verifico el estado de los componentes con el comando: ng test ui-lib --watch=false
+
+
+# Decisiones
+- validar el estado de los componentes antes de continuar con el proyecto.
+
+
+
+# Problemas y soluciones
+- Error en el archivo de pruebas por no especificar el tipo, se agrego: <Record<string, unknown>>> en let component y let fixture
+
+# Resultado
+- Se comprobo el estado de los componente y se corrigio un error presente en el archivo de pruebas de ui-table.spect.ts
+
+---
+
+## bitacora 9 — Pruebas mas extensas
+
+**Fecha:** 20/11/2026
+
+# Actividades
+- Como la anterior bitocora se hicieron pruebas en los demas componentes con pruebas mas extensas
+
+
+# Decisiones
+- validar el estado de los componentes antes de continuar con el proyecto.
+- Extender pruebas para probar otros comportamientos de los componentes.
+
+
+
+# Problemas y soluciones
+- Error en la logica de construcción, se cambio expect(emitted).ToBeTrue() por expect(emitted).ToBe(true)
+
+# Resultado
+- Se comprobo el estado de los componente y se corrigio un error presente en el archivo de pruebas de ui-button.spect.ts
+
+---
+
+## bitacora 10 — Creacion de modelos
+
+**Fecha:** 20/11/2026
+
+# Actividades
+- En demo-app se creo los modelos para la estructuracion de los datos: character.ts , episode.ts , location.ts
+- ademas de api-response.ts para definir la estructura de la respuesta que da la api
+
+
+# Decisiones
+- Crear los modelos.
+- Empezar con pequeños cambios para despues ir ampliando el contenido de cada archivo.
+
+
+
+# Problemas y soluciones
+- no hubo problemas
+
+# Resultado
+- Se crearon distintos archivos en la carpeta projects/demo-app/src/app/models
+
+---
+
+## bitacora 11 — Comienzo de la creacion de la parte visual
+
+**Fecha:** 20/11/2026
+
+# Actividades
+- Creacion de los primeros elementos visuales
+- Iniciar las primeras conexiones con la libreria
+
+
+# Decisiones
+- Empezar con elementos sencillos para ver su funcionamiento.
+- Ir agregando contenido progresivamente mientras se observa su comportamiento.
+
+
+
+# Problemas y soluciones
+- Mal citiado en la exportacion de ui-table, se corrigio la linea de codigo en la que se presentaba el error
+
+# Resultado
+- En el servidor local ya se muestra los inicios de la aplicacion  
+
+---
+
+## bitacora 12 — Registros actualizados
+
+**Fecha:** 20/11/2026
+
+# Actividades
+- Implementar las accions de ver, eliminar y filtrar personajes
+- Hacer pruebas en el despliegue local
+
+
+# Decisiones
+- Avanzar en la implementacion de mas elementos de la aplicacion
+
+
+
+
+# Problemas y soluciones
+- Error de sintaxis en un evento, se uso [] lo que ocaciono un error ya que se debia esperar un evento y estos se usan para una propiedad
+
+# Resultado
+- Una version mas avanzada de la aplicacion
+
+---

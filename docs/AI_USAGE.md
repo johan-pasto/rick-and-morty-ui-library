@@ -85,3 +85,28 @@ Comprender cómo configurar los archivos esenciales del proyecto, siguiendo la p
 
 - No se rechazaron explícitamente propuestas durante esta interacción.
 - Las configuraciones se revisaron antes de incorporarse, con el propósito de verificar que correspondieran al plan de trabajo y a las necesidades del proyecto.
+
+## Interacción 4: Configuración de autenticación y sincronización con GitHub**
+
+- **Fecha:** 19/11/2026
+- **Hora:** 8:50 p. m. 
+- **Herramienta:** ChatGPT
+
+### Objetivo
+
+Solucionar el problema de autenticación presentado al intentar subir los commits locales del proyecto al repositorio remoto de GitHub, configurando el acceso necesario para permitir la sincronización y verificar que los cambios se publicaran correctamente.
+
+### Prompt utilizado
+
+Ayúdame a solucionar el problema de autenticación al intentar subir el proyecto a github mediante git push.
+
+### Qué se aceptó y por qué
+
+- La orientación para realizar el proceso de autenticación de GitHub mediante el navegador, permitiendo autorizar el acceso al repositorio.
+- La solución que permitió sincronizar la rama local `main` con la rama remota `main`, estableciendo el seguimiento (`tracking`) entre ambas.
+- La validación de la sincronización mediante un segundo `git push`, que confirmó que no había cambios pendientes de subir.
+
+### Qué se rechazó o modificó
+
+- Se rechazo una primera idea de verificar las credenciasles de windows ya que en estas no se encontraba el problema.
+- Se solucionó el problema de autenticación que inicialmente impedía realizar el `git push`, permitiendo publicar los commits existentes en el repositorio remoto.

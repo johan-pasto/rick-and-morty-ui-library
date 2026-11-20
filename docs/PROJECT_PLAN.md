@@ -96,38 +96,38 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 
 # 2.2 — ui-card
 
-- [ ] Comprender la proyección de contenido mediante `ng-content`.
-- [ ] Comprender la estructura de un componente reutilizable.
-- [ ] Implementar title y subtitle.
-- [ ] Implementar los estilos de elevation.
-- [ ] Implementar headerClicked.
+- [x] Comprender la proyección de contenido mediante `ng-content`.
+- [x] Comprender la estructura de un componente reutilizable.
+- [x] Implementar title y subtitle.
+- [x] Implementar los estilos de elevation.
+- [x] Implementar headerClicked.
 - [ ] Verificar la proyección de contenido.
 
 **Resultado esperado:** Card reutilizable con contenido dinámico y evento de encabezado.
 
 # 2.3 — ui-select
 
-- [ ] Comprender el funcionamiento de `model()`.
-- [ ] Comprender el binding bidireccional.
-- [ ] Definir `SelectOption`.
-- [ ] Implementar las opciones.
-- [ ] Implementar label y placeholder.
-- [ ] Implementar loading y disabled.
-- [ ] Implementar selectionChange.
+- [x] Comprender el funcionamiento de `model()`.
+- [x] Comprender el binding bidireccional.
+- [x] Definir `SelectOption`.
+- [x] Implementar las opciones.
+- [x] Implementar label y placeholder.
+- [x] Implementar loading y disabled.
+- [x] Implementar selectionChange.
 - [ ] Verificar el comportamiento del selector.
 
 **Resultado esperado:** Selector reutilizable que permita gestionar selección y emitir la opción elegida.
 
 # 2.4 — ui-table
 
-- [ ] Comprender los tipos genéricos en TypeScript.
-- [ ] Definir `TableColumn`.
-- [ ] Definir `TableAction`.
-- [ ] Implementar una tabla genérica.
-- [ ] Implementar loading.
-- [ ] Implementar emptyMessage.
-- [ ] Implementar errorMessage.
-- [ ] Implementar las acciones view y delete.
+- [x] Comprender los tipos genéricos en TypeScript.
+- [x] Definir `TableColumn`.
+- [x] Definir `TableAction`.
+- [x] Implementar una tabla genérica.
+- [x] Implementar loading.
+- [x] Implementar emptyMessage.
+- [x] Implementar errorMessage.
+- [x] Implementar las acciones view y delete.
 - [ ] Verificar el comportamiento con diferentes estructuras de datos.
 
 **Resultado esperado:** Tabla genérica que no dependa de un recurso específico.

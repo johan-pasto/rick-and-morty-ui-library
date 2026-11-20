@@ -18,7 +18,7 @@ export type TableAction<T> = {
   styleUrl: './ui-table.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiTable<T extends Record<string, unknown>> {
+export class UiTable<T extends object> {
   /** Columnas que se mostrarán en la tabla. */
   columns = input<TableColumn[]>([]);
 
@@ -39,7 +39,7 @@ export class UiTable<T extends Record<string, unknown>> {
 
   /** Obtiene el valor de una propiedad del registro según la columna. */
   getCellValue(row: T, key: string): unknown {
-    return row[key];
+    return (row as unknown as Record<string, unknown>)[key];
   }
 
   /** Emite una acción sobre el registro seleccionado. */
