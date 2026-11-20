@@ -1,0 +1,29 @@
+<div class="flex flex-col gap-2">
+  <label class="flex items-center gap-2 text-sm font-semibold text-[#97CE4C]">
+    {{ label() }}
+
+    @if (loading()) {
+      <span
+        class="h-4 w-4 animate-spin rounded-full border-2 border-[#97CE4C] border-t-transparent"
+        aria-label="Cargando opciones"
+      ></span>
+    }
+  </label>
+
+  <select
+    class="w-full rounded-lg border border-[#97CE4C]/40 bg-[#252A34] px-4 py-2.5 text-white outline-none transition-colors duration-200 hover:border-[#97CE4C] focus:border-[#97CE4C] focus:ring-2 focus:ring-[#97CE4C]/30 disabled:cursor-not-allowed disabled:opacity-50"
+    [value]="value() ?? ''"
+    [disabled]="disabled() || loading()"
+    (change)="handleChange($event)"
+  >
+    <option value="" disabled>
+      {{ placeholder() }}
+    </option>
+
+    @for (option of options(); track option.value) {
+      <option [value]="option.value" class="bg-[#252A34] text-white">
+        {{ option.label }}
+      </option>
+    }
+  </select>
+</div>

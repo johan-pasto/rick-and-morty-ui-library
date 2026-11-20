@@ -19,4 +19,14 @@ describe('UiButton', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should display the button label', () => {
+    fixture.componentRef.setInput('label', 'Explorar');
+
+    fixture.detectChanges();
+
+    const button: HTMLButtonElement =
+      fixture.nativeElement.querySelector('button');
+
+    expect(button.textContent).toContain('Explorar');
+  });
 });
