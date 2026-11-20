@@ -28,5 +28,56 @@ describe('UiButton', () => {
       fixture.nativeElement.querySelector('button');
 
     expect(button.textContent).toContain('Explorar');
+    
   });
+  it('should emit clicked when the button is clicked', () => {
+  let emitted = false;
+
+  component.clicked.subscribe(() => {
+    emitted = true;
+  });
+
+  const button: HTMLButtonElement =
+    fixture.nativeElement.querySelector('button');
+
+  button.click();
+
+  expect(emitted).toBe(true);
+});
+
+it('should not emit clicked when the button is disabled', () => {
+  let emitted = false;
+
+  component.clicked.subscribe(() => {
+    emitted = true;
+  });
+
+  fixture.componentRef.setInput('disabled', true);
+  fixture.detectChanges();
+
+  const button: HTMLButtonElement =
+    fixture.nativeElement.querySelector('button');
+
+  button.click();
+
+  expect(emitted).toBe(false);
+});
+
+it('should not emit clicked when the button is loading', () => {
+  let emitted = false;
+
+  component.clicked.subscribe(() => {
+    emitted = true;
+  });
+
+  fixture.componentRef.setInput('loading', true);
+  fixture.detectChanges();
+
+  const button: HTMLButtonElement =
+    fixture.nativeElement.querySelector('button');
+
+  button.click();
+
+  expect(emitted).toBe(false);
+});
 });
