@@ -7,7 +7,6 @@ import { Character } from '../models/character';
 import { Episode } from '../models/episode';
 import { Location } from '../models/location';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -16,8 +15,11 @@ export class RickAndMortyApi {
 
   constructor(private readonly http: HttpClient) {}
 
-  getCharacters(status?: string): Observable<ApiResponse<Character>> {
-    let params = new HttpParams();
+  getCharacters(
+    status?: string,
+    page: number = 1,
+  ): Observable<ApiResponse<Character>> {
+    let params = new HttpParams().set('page', page);
 
     if (status) {
       params = params.set('status', status);
@@ -29,11 +31,21 @@ export class RickAndMortyApi {
     );
   }
 
-  getEpisodes(): Observable<ApiResponse<Episode>> {
-    return this.http.get<ApiResponse<Episode>>(`${this.baseUrl}/episode`);
+  getEpisodes(page: number = 1): Observable<ApiResponse<Episode>> {
+    const params = new HttpParams().set('page', page);
+
+    return this.http.get<ApiResponse<Episode>>(
+      `${this.baseUrl}/episode`,
+      { params },
+    );
   }
 
-  getLocations(): Observable<ApiResponse<Location>> {
-    return this.http.get<ApiResponse<Location>>(`${this.baseUrl}/location`);
+  getLocations(page: number = 1): Observable<ApiResponse<Location>> {
+    const params = new HttpParams().set('page', page);
+
+    return this.http.get<ApiResponse<Location>>(
+      `${this.baseUrl}/location`,
+      { params },
+    );
   }
 }

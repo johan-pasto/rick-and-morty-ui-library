@@ -18,6 +18,14 @@ export class App {
   protected readonly pendingDeleteRow = signal<ResourceRow | null>(null);
   protected readonly isDeleteConfirmationOpen = signal<boolean>(false);
 
+  protected previousPage(): void {
+    this.state.changePage(this.state.currentPage() - 1);
+  }
+
+  protected nextPage(): void {
+    this.state.changePage(this.state.currentPage() + 1);
+  }
+
   protected onView(row: ResourceRow): void {
     this.selectedRow.set(row);
     this.isModalOpen.set(true);

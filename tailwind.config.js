@@ -22,6 +22,7 @@ module.exports = {
         float: {
           '0%,100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-12px)' },
+          
         },
         twinkle: {
           '0%,100%': { opacity: '.35' },

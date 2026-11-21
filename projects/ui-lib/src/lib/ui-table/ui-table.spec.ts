@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiTable } from './ui-table';
 
 describe('UiTable', () => {
-  let component: UiTable<Record<string, unknown>>;
-  let fixture: ComponentFixture<UiTable<Record<string, unknown>>>;
+  let component: UiTable<object>;
+  let fixture: ComponentFixture<UiTable<object>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -75,7 +75,7 @@ it('should display the error message', () => {
 
 it('should emit actionTriggered when an action is clicked', () => {
   let emittedAction:
-    | { action: 'view' | 'delete'; row: Record<string, unknown> }
+    | { action: 'view' | 'delete'; row: object }
     | undefined;
 
   const row = { name: 'Rick Sanchez', status: 'Alive' };
@@ -102,7 +102,7 @@ it('should emit actionTriggered when an action is clicked', () => {
 });
 it('should emit delete action when the delete button is clicked', () => {
   let emittedAction:
-    | { action: 'view' | 'delete'; row: Record<string, unknown> }
+    | { action: 'view' | 'delete'; row: object }
     | undefined;
 
   const row = { name: 'Morty Smith', status: 'Alive' };
