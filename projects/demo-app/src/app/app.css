@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1d222b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #97ce4c;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #85b83e;
+}
+
+/* Selección de texto */
+::selection {
+  background: #97ce4c;
+  color: #252a34;
+}
+
+/* Animación de entrada */
+main > section {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto hover para paneles */
+main article,
+main section > section {
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+main article:hover {
+  border-color: rgba(151, 206, 76, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Entrada de los modales */
+main > div.fixed {
+  animation: modal-fade-in 0.2s ease-out;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Accesibilidad: foco visible */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid #97ce4c;
+  outline-offset: 3px;
+  border-radius: 6px;
+}

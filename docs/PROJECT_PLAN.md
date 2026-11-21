@@ -90,7 +90,7 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 - [x] Implementar variantes y tamaños.
 - [x] Implementar los estados disabled y loading.
 - [x] Implementar el evento clicked.
-- [ ] Verificar su comportamiento.
+- [x] Verificar su comportamiento.
 
 **Resultado esperado:** Botón reutilizable, correctamente tipado y funcional.
 
@@ -101,7 +101,7 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 - [x] Implementar title y subtitle.
 - [x] Implementar los estilos de elevation.
 - [x] Implementar headerClicked.
-- [ ] Verificar la proyección de contenido.
+- [x] Verificar la proyección de contenido.
 
 **Resultado esperado:** Card reutilizable con contenido dinámico y evento de encabezado.
 
@@ -114,7 +114,7 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 - [x] Implementar label y placeholder.
 - [x] Implementar loading y disabled.
 - [x] Implementar selectionChange.
-- [ ] Verificar el comportamiento del selector.
+- [x] Verificar el comportamiento del selector.
 
 **Resultado esperado:** Selector reutilizable que permita gestionar selección y emitir la opción elegida.
 
@@ -128,16 +128,16 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 - [x] Implementar emptyMessage.
 - [x] Implementar errorMessage.
 - [x] Implementar las acciones view y delete.
-- [ ] Verificar el comportamiento con diferentes estructuras de datos.
+- [x] Verificar el comportamiento con diferentes estructuras de datos.
 
 **Resultado esperado:** Tabla genérica que no dependa de un recurso específico.
 
 # 2.5 — Exportación de la librería
 
-- [ ] Revisar `public-api.ts`.
-- [ ] Exportar los componentes.
-- [ ] Exportar los tipos públicos.
-- [ ] Verificar que la demo pueda consumir la librería sin importaciones internas.
+- [x] Revisar `public-api.ts`.
+- [x] Exportar los componentes.
+- [x] Exportar los tipos públicos.
+- [x] Verificar que la demo pueda consumir la librería sin importaciones internas.
 
 **Resultado esperado:** Librería organizada y consumible desde la aplicación demo.
 

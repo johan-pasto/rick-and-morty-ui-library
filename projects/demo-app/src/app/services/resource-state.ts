@@ -19,12 +19,14 @@ constructor(private readonly api: RickAndMortyApi) {}
   readonly resource = signal<ResourceType>('characters');
   readonly status = signal<CharacterStatus | null>(null);
   readonly rows = signal<ResourceRow[]>([]);
+  readonly hasLoaded = signal<boolean>(false);
   readonly totalCount = signal<number>(0);
   readonly loading = signal<boolean>(false);
   readonly error = signal<string | null>(null);
 
   loadData(): void {
   this.loading.set(true);
+  this.hasLoaded.set(true);
   this.error.set(null);
 
   const resource = this.resource();
@@ -35,12 +37,12 @@ constructor(private readonly api: RickAndMortyApi) {}
       this.api.getCharacters(status ?? undefined).subscribe({
         next: (response) => {
           this.rows.set(response.results);
-          this.loading.set(false);
+          this.finishLoading();
           this.totalCount.set(response.info.count);
         },
         error: () => {
           this.error.set('Error loading characters.');
-          this.loading.set(false);
+          this.finishLoading();
         },
       });
       break;
@@ -49,12 +51,12 @@ constructor(private readonly api: RickAndMortyApi) {}
       this.api.getEpisodes().subscribe({
         next: (response) => {
           this.rows.set(response.results);
-          this.loading.set(false);
+          this.finishLoading();
           this.totalCount.set(response.info.count);
         },
         error: () => {
           this.error.set('Error loading episodes.');
-          this.loading.set(false);
+          this.finishLoading();
         },
       });
       break;
@@ -63,12 +65,12 @@ constructor(private readonly api: RickAndMortyApi) {}
       this.api.getLocations().subscribe({
         next: (response) => {
           this.rows.set(response.results);
-          this.loading.set(false);
+          this.finishLoading();
           this.totalCount.set(response.info.count);
         },
         error: () => {
           this.error.set('Error loading locations.');
-          this.loading.set(false);
+          this.finishLoading();
         },
       });
       break;
@@ -81,13 +83,15 @@ constructor(private readonly api: RickAndMortyApi) {}
     this.rows.set([]);
     this.error.set(null);
     this.loading.set(false);
+    this.hasLoaded.set(false);
   }
-
+  
   changeStatus(status: CharacterStatus | null): void {
   this.status.set(status);
   this.rows.set([]);
   this.error.set(null);
   this.loading.set(false);
+  this.hasLoaded.set(false);
   }
 
   removeRow(row: ResourceRow): void {
@@ -96,4 +100,9 @@ constructor(private readonly api: RickAndMortyApi) {}
   );
   }
 
+  private finishLoading(): void {
+    setTimeout(() => {
+      this.loading.set(false);
+    }, 600);
+  }
 }

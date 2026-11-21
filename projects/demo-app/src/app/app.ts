@@ -68,19 +68,16 @@ export class App {
     }
   }
 
-  protected onResourceChange(option: { value: string }): void {
-    this.state.changeResource(option.value as ResourceType);
-    this.state.loadData();
-  }
-  protected onStatusChange(option: { value: string }): void {
-    const status = option.value
-      ? (option.value as CharacterStatus)
-      : null;
+    protected onResourceChange(option: { value: string }): void {
+      this.state.changeResource(option.value as ResourceType);
+    }
+    protected onStatusChange(option: { value: string }): void {
+      const status = option.value
+        ? (option.value as CharacterStatus)
+        : null;
 
-    this.state.changeStatus(status);
-    this.state.loadData();
-  }
-
+      this.state.changeStatus(status);
+    }
   
   protected onTableAction(event: TableAction<ResourceRow>): void {
     if (event.action === 'view') {

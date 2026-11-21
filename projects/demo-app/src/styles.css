@@ -1,4 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-space-900 font-sans text-white antialiased;
+  }
+  ::selection {
+    background: #97ce4c;
+    color: #070b10;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #97ce4c55;
+    border-radius: 9999px;
+  }
+}
+
+@layer components {
+  /* Estrellas */
+  .stars {
+    background-image:
+      radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
+      radial-gradient(1px 1px at 90px 80px, #cfe9a8, transparent),
+      radial-gradient(1.5px 1.5px at 150px 20px, #fff, transparent),
+      radial-gradient(1px 1px at 60px 150px, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 180px 120px, #b5f0ff, transparent);
+    background-size: 200px 200px;
+  }
+
+  /* Título estilo cómic con borde */
+  .title-comic {
+    @apply font-display tracking-wider;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 18px rgba(151, 206, 76, 0.45);
+  }
+
+  /* Panel tipo "cristal de laboratorio" */
+  .panel {
+    @apply rounded-2xl border border-portal/20 bg-space-800/80 shadow-xl shadow-black/30 backdrop-blur-md;
+  }
+}

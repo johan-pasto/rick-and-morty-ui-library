@@ -1,153 +1,298 @@
-<main class="min-h-screen bg-[#252A34] text-white">
-  <header class="border-b border-white/10 bg-[#1d222b] px-6 py-5">
-    <div class="mx-auto max-w-7xl">
-      <h1 class="text-2xl font-bold text-[#97CE4C]">
-        Rick and Morty Explorer
-      </h1>
+<main class="relative isolate min-h-screen overflow-x-hidden">
+  <!-- ===== FONDO MULTIVERSO ===== -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1b2a14_0%,#0d131a_45%,#070b10_100%)]"></div>
+    <div class="stars absolute inset-0 animate-twinkle"></div>
+    <!-- nebulosas -->
+    <div class="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-portal/10 blur-3xl sm:h-96 sm:w-96"></div>
+    <div class="absolute -right-32 top-2/3 h-72 w-72 rounded-full bg-purple-500/15 blur-3xl sm:h-96 sm:w-96"></div>
+    <div class="absolute bottom-0 left-1/3 h-60 w-60 rounded-full bg-rick/10 blur-3xl"></div>
+  </div>
 
-      <p class="mt-1 text-sm text-gray-400">
-        Explora personajes, episodios y ubicaciones del multiverso.
-      </p>
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 z-30 border-b border-portal/20 bg-space-900/80 backdrop-blur-lg">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
+      <div class="flex min-w-0 items-center gap-3">
+        <div
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-portal bg-portal/10 text-xl shadow-portal sm:h-12 sm:w-12 sm:text-2xl"
+        >
+          🌀
+        </div>
+        <div class="min-w-0">
+          <h1 class="title-comic truncate text-2xl leading-none text-portal sm:text-4xl">
+            Rick and Morty Explorer
+          </h1>
+          <p class="mt-1 hidden text-xs text-gray-400 sm:block sm:text-sm">
+            Explora personajes, episodios y ubicaciones del multiverso.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="hidden shrink-0 items-center gap-2 rounded-full border border-portal/30 bg-portal/10 px-4 py-2 md:flex"
+      >
+        <span class="h-2 w-2 animate-pulse rounded-full bg-portal-glow shadow-[0_0_10px_#b8ff5c]"></span>
+        <span class="text-xs font-semibold tracking-widest text-portal">MULTIVERSE EXPLORER</span>
+      </div>
     </div>
   </header>
 
-  <section class="mx-auto max-w-7xl px-6 py-8">
-    <h2 class="text-xl font-semibold">
-      Multiverse Database
-    </h2>
+  <section class="mx-auto max-w-7xl space-y-6 px-4 py-6 sm:space-y-8 sm:px-6 sm:py-10">
+    <!-- ===== HERO ===== -->
+    <section
+      class="relative overflow-hidden rounded-3xl border border-portal/30 bg-gradient-to-br from-space-800 via-[#14210f] to-[#2a1a45] px-5 py-10 shadow-portal sm:px-10 sm:py-16"
+    >
+      <div class="relative z-10 max-w-xl">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-portal/40 bg-portal/10 px-3 py-1 text-[11px] font-semibold tracking-widest text-portal"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-portal-glow"></span>
+          MULTIVERSE DATABASE
+        </span>
 
-    <p class="mt-2 text-gray-400">
-      Selecciona un recurso para comenzar a explorar.
-    </p>
-    <div class="mt-6 rounded-xl border border-white/10 bg-[#1d222b] p-5">
-  <p class="text-sm text-gray-400">Recurso seleccionado</p>
+        <h2 class="title-comic mt-4 text-5xl leading-[0.95] sm:mt-5 sm:text-6xl lg:text-7xl">
+          Explora el
+          <span class="block text-portal drop-shadow-[0_0_20px_rgba(151,206,76,0.7)]">multiverso</span>
+        </h2>
 
-  <p class="mt-1 text-lg font-semibold text-[#97CE4C]">
-    {{ state.resource() }}
-  </p>
+        <p class="mt-4 max-w-md text-sm leading-6 text-gray-300 sm:text-base sm:leading-7">
+          Descubre personajes, episodios y ubicaciones de infinitas dimensiones.
+          <span class="text-morty">Wubba lubba dub dub!</span>
+        </p>
+      </div>
 
-  <p class="mt-4 text-sm text-gray-400">Estado de carga</p>
-
-  <p class="mt-1">
-    {{ state.loading() ? 'Cargando...' : 'En espera' }}
-  </p>
-
-<p class="mt-4 text-sm text-gray-400">Registros cargados</p>
-
-<p class="mt-1">
-  {{ state.rows().length }}
-</p>
-
-<p class="mt-4 text-sm text-gray-400">Total de registros disponibles</p>
-
-<p class="mt-1">
-  {{ state.totalCount() }}
-</p>
-</div>
-  </section>
-  <div class="mt-6">
-  <ui-button
-    label="Cargar información"
-    variant="primary"
-    size="md"
-  />
-</div>
-<div class="mt-6">
-  <ui-card
-    title="Explorador del multiverso"
-    subtitle="Base de datos de Rick and Morty"
-    elevation="raised"
-  >
-    <p class="text-sm text-gray-300">
-      Aquí mostraremos los personajes, episodios y ubicaciones
-      obtenidos desde la API.
-    </p>
-  </ui-card>
-</div>
-<div class="mt-6 max-w-md">
-  <ui-select
-    label="Tipo de recurso"
-    placeholder="Selecciona una categoría"
-    [options]="resourceOptions"
-    [value]="state.resource()"
-    (selectionChange)="onResourceChange($event)"
-  />
-</div>
-@if (isModalOpen() && selectedRow()) {
-  <div class="fixed inset-0 z-40 flex items-center justify-center bg-black/70 p-4">
-    <div class="w-full max-w-2xl">
-      <ui-card
-        title="Detalles del registro"
-        subtitle="Información completa del elemento seleccionado"
-        elevation="raised"
+      <!-- Portal giratorio -->
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -bottom-16 -right-16 h-56 w-56 animate-float sm:-right-6 sm:bottom-1/2 sm:h-80 sm:translate-y-1/2 lg:h-96 lg:w-96"
       >
-        <div class="max-h-[60vh] overflow-y-auto rounded-lg bg-[#252A34] p-4">
-          <pre class="whitespace-pre-wrap break-words text-sm text-gray-200">{{ selectedRow() | json }}</pre>
-        </div>
+        <div
+          class="absolute inset-0 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,#97CE4C,#b8ff5c,#0d131a,#97CE4C,#00B0C8,#97CE4C)] opacity-70 blur-[2px]"
+        ></div>
+        <div
+          class="absolute inset-4 animate-spin-reverse rounded-full bg-[conic-gradient(from_90deg,#b8ff5c,#14210f,#97CE4C,#14210f,#b8ff5c)] opacity-80"
+        ></div>
+        <div class="absolute inset-10 rounded-full bg-space-900 shadow-[inset_0_0_40px_rgba(151,206,76,0.6)]"></div>
+        <div class="absolute inset-16 rounded-full bg-portal/20 blur-xl"></div>
+      </div>
+    </section>
 
-        <div class="mt-5 flex justify-end">
-          <ui-button
-            label="Cerrar"
-            variant="secondary"
-            size="md"
-            (clicked)="closeModal()"
+    <!-- ===== PANEL DE CONTROL ===== -->
+    <section class="panel p-4 sm:p-7">
+      <div class="mb-5 flex items-center justify-between gap-3 sm:mb-6">
+        <div>
+          <h3 class="flex items-center gap-2 text-base font-semibold sm:text-lg">
+            <span class="text-portal">🔫</span> Panel de exploración
+          </h3>
+          <p class="mt-1 text-xs text-gray-400 sm:text-sm">
+            Configura tu búsqueda dentro del multiverso.
+          </p>
+        </div>
+        <span
+          class="hidden rounded-lg border border-rick/30 bg-rick/10 px-3 py-2 text-xs font-medium text-rick sm:inline-flex"
+        >
+          Portal de consulta
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
+        <div class="min-w-0">
+          <ui-select
+            label="Tipo de recurso"
+            placeholder="Selecciona una categoría"
+            [options]="resourceOptions"
+            [value]="state.resource()"
+            (selectionChange)="onResourceChange($event)"
           />
         </div>
-      </ui-card>
-    </div>
-  </div>
-}
-@if (state.resource() === 'characters') {
-  <div class="mt-6 max-w-md">
-    <ui-select
-      label="Estado del personaje"
-      placeholder="Filtrar por estado"
-      [options]="statusOptions"
-      [value]="state.status() ?? ''"
-      (selectionChange)="onStatusChange($event)"
-    />
-  </div>
-}
-<div class="mt-8">
-  <ui-table
-    [columns]="columns"
-    [rows]="state.rows()"
-    [loading]="state.loading()"
-    [emptyMessage]="'No hay registros disponibles.'"
-    [errorMessage]="state.error()"
-    (actionTriggered)="onTableAction($event)"
-  />
-</div>
-@if (isDeleteConfirmationOpen()) {
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-    <ui-card
-      title="¿Eliminar registro?"
-      subtitle="Esta acción quitará el registro de la tabla actual."
-      elevation="raised"
-    >
-      <p class="mb-6 text-gray-300">
-        ¿Estás seguro de que deseas eliminar
-        <strong class="text-[#97CE4C]">
-          {{ pendingDeleteRow()?.name }}
-        </strong>?
-      </p>
 
-      <div class="flex justify-end gap-3">
-        <ui-button
-          label="Cancelar"
-          variant="secondary"
-          size="md"
-          (clicked)="cancelDelete()"
-        />
+        @if (state.resource() === 'characters') {
+          <div class="min-w-0">
+            <ui-select
+              label="Estado del personaje"
+              placeholder="Filtrar por estado"
+              [options]="statusOptions"
+              [value]="state.status() ?? ''"
+              (selectionChange)="onStatusChange($event)"
+            />
+          </div>
+        }
 
-        <ui-button
-          label="Eliminar"
-          variant="danger"
-          size="md"
-          (clicked)="confirmDelete()"
-        />
+        <div class="w-full md:col-span-2 lg:col-span-1 lg:w-auto [&_button]:w-full lg:[&_button]:w-auto">
+          <ui-button
+            label="Cargar información"
+            variant="primary"
+            size="md"
+            [disabled]="state.loading()"
+            [loading]="state.loading()"
+            (clicked)="state.loadData()"
+          />
+        </div>
       </div>
-    </ui-card>
-  </div>
-}
+    </section>
+
+    <!-- ===== ESTADÍSTICAS ===== -->
+    <section class="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-3">
+      <!-- Recurso -->
+      <article
+        class="panel group relative col-span-2 overflow-hidden p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-portal/60 hover:shadow-portal sm:p-6 xl:col-span-1"
+      >
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <p class="text-xs font-medium text-gray-400 sm:text-sm">Recurso seleccionado</p>
+            <p class="title-comic mt-2 truncate text-3xl capitalize text-portal sm:mt-3 sm:text-4xl">
+              {{ state.resource() }}
+            </p>
+          </div>
+          <div
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-portal/10 text-xl sm:h-12 sm:w-12"
+          >
+            🧪
+          </div>
+        </div>
+        <div class="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-portal/10 blur-2xl"></div>
+      </article>
+
+      <!-- Cargados -->
+      <article
+        class="panel group relative overflow-hidden !border-schwifty/25 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:!border-schwifty/60 sm:p-6"
+      >
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <p class="text-xs font-medium text-gray-400 sm:text-sm">Registros cargados</p>
+            <p class="title-comic mt-2 text-4xl text-schwifty sm:mt-3 sm:text-5xl">
+              {{ state.rows().length }}
+            </p>
+          </div>
+          <div
+            class="hidden h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-schwifty/10 text-xl min-[400px]:flex sm:h-12 sm:w-12"
+          >
+            📡
+          </div>
+        </div>
+        <div class="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-schwifty/10 blur-2xl"></div>
+      </article>
+
+      <!-- Total -->
+      <article
+        class="panel group relative overflow-hidden !border-rick/25 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:!border-rick/60 sm:p-6"
+      >
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <p class="text-xs font-medium text-gray-400 sm:text-sm">Total en API</p>
+            <p class="title-comic mt-2 text-4xl text-rick sm:mt-3 sm:text-5xl">
+              {{ state.totalCount() }}
+            </p>
+          </div>
+          <div
+            class="hidden h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rick/10 text-xl min-[400px]:flex sm:h-12 sm:w-12"
+          >
+            🌌
+          </div>
+        </div>
+        <div class="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-rick/10 blur-2xl"></div>
+      </article>
+    </section>
+
+    <!-- ===== TABLA ===== -->
+    <section class="panel overflow-hidden !rounded-3xl">
+      <div
+        class="flex flex-col gap-3 border-b border-portal/15 p-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-6"
+      >
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="h-2.5 w-2.5 rounded-full bg-portal shadow-[0_0_12px_rgba(151,206,76,0.8)]"></span>
+            <h3 class="title-comic text-2xl tracking-wide sm:text-3xl">Explorador del multiverso</h3>
+          </div>
+          <p class="mt-1 text-xs text-gray-400 sm:mt-2 sm:text-sm">
+            Resultados obtenidos desde la API de Rick and Morty.
+          </p>
+        </div>
+
+        <div
+          class="inline-flex w-fit items-center rounded-full border border-portal/30 bg-portal/10 px-3 py-1.5 text-xs font-medium text-portal"
+        >
+          <span class="mr-2 animate-pulse">●</span> API conectada
+        </div>
+      </div>
+
+      <!-- overflow-x-auto: la tabla se desliza en celulares sin romper el layout -->
+      <div class="overflow-x-auto p-2 sm:p-5 md:p-6">
+        <div class="min-w-[560px] sm:min-w-0">
+          <ui-table
+            [columns]="columns"
+            [rows]="state.rows()"
+            [loading]="state.loading()"
+            [emptyMessage]="'No hay registros en esta dimensión 🛸'"
+            [errorMessage]="state.error()"
+            (actionTriggered)="onTableAction($event)"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="pb-6 text-center text-xs text-gray-500">
+      Hecho con 🧪 en la dimensión C-137 · Datos de
+      <a
+        href="https://rickandmortyapi.com"
+        target="_blank"
+        rel="noopener"
+        class="text-portal underline-offset-4 hover:underline"
+        >rickandmortyapi.com</a
+      >
+    </footer>
+  </section>
+
+  <!-- ===== MODAL DETALLE ===== -->
+  @if (isModalOpen() && selectedRow()) {
+    <div
+      class="fixed inset-0 z-40 flex items-end justify-center overflow-y-auto bg-black/80 p-0 backdrop-blur-sm sm:items-center sm:p-6"
+    >
+      <div class="w-full max-w-2xl sm:my-auto">
+        <ui-card
+          title="Detalles del registro"
+          subtitle="Información completa del elemento seleccionado"
+          elevation="raised"
+        >
+          <div
+            class="max-h-[60vh] overflow-y-auto rounded-lg border border-portal/20 bg-space-900 p-4 shadow-[inset_0_0_20px_rgba(151,206,76,0.08)]"
+          >
+            <pre class="whitespace-pre-wrap break-words font-mono text-xs text-portal sm:text-sm">{{
+              selectedRow() | json
+            }}</pre>
+          </div>
+
+          <div class="mt-5 flex justify-end [&_button]:w-full sm:[&_button]:w-auto">
+            <ui-button label="Cerrar" variant="secondary" size="md" (clicked)="closeModal()" />
+          </div>
+        </ui-card>
+      </div>
+    </div>
+  }
+
+  <!-- ===== MODAL ELIMINAR ===== -->
+  @if (isDeleteConfirmationOpen()) {
+    <div
+      class="fixed inset-0 z-50 flex items-end justify-center bg-black/80 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+    >
+      <div class="w-full max-w-md">
+        <ui-card
+          title="¿Eliminar registro?"
+          subtitle="Esta acción quitará el registro de la tabla actual."
+          elevation="raised"
+        >
+          <p class="mb-6 text-gray-300">
+            ¿Seguro que quieres mandar a
+            <strong class="text-portal">{{ pendingDeleteRow()?.name }}</strong>
+            a otra dimensión?
+          </p>
+
+          <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end [&_button]:w-full sm:[&_button]:w-auto">
+            <ui-button label="Cancelar" variant="secondary" size="md" (clicked)="cancelDelete()" />
+            <ui-button label="Eliminar" variant="danger" size="md" (clicked)="confirmDelete()" />
+          </div>
+        </ui-card>
+      </div>
+    </div>
+  }
 </main>
