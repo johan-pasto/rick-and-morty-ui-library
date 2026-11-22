@@ -240,11 +240,8 @@
 - Implementar las accions de ver, eliminar y filtrar personajes
 - Hacer pruebas en el despliegue local
 
-
 # Decisiones
 - Avanzar en la implementacion de mas elementos de la aplicacion
-
-
 
 
 # Problemas y soluciones
@@ -254,3 +251,27 @@
 - Una version mas avanzada de la aplicacion
 
 ---
+
+## bitacora 13 — Problema con los datos de la tabla
+
+**Fecha:** 20/11/2026
+
+# Actividades
+- Implementar un color que cambie segun el estado del personaje: alive, dead, unknown
+
+
+# Decisiones
+- Descartar la idea del decorado por estado del personaje
+
+
+# Problemas y soluciones
+- Error el color del boton de eliminar se al fondo de cada celda haciendo que todas se vieran en rojo, ademas de un problema al volver al codigo anterior, se descarto el uso de este caracteristica para la aplicacion, y el error al volver a un estado anterior se debio a no hacer la compilacion de la libreria despues de revertir los cambios
+
+# Resultado
+- Se implemente y descarto el uso de colores en las celdas por el estado de personaje
+
+---
+
+## RETOS Y SOLUCIONES
+
+Mi mayor reto en este proyecto fue que era la primera vez que usaba angular asi que tenia que aprenderlo, y me quede estancado en ciertas partes del codigo para entender mejor lo que queria hacer, tambien un error con el color de un fondo que me tomo unas horas corregir sin darme cuenta que era porque olvide compilar la libreria despues de un cambio, aunque ha sido algo dificil tambien es una buena oportunidad para aprender.

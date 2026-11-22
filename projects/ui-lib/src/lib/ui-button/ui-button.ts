@@ -1,5 +1,10 @@
+
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+
+/** Available visual styles for the button. */
 export type ButtonVariant = 'primary' | 'secondary' | 'danger';
+
+/** Available sizes for the button. */
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 @Component({
@@ -9,29 +14,53 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
   templateUrl: './ui-button.html',
   styleUrl: './ui-button.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  })
+})
 export class UiButton {
-  /** es la variante del boton, puede ser primary, secondary o danger este le da estilo al boton */
+
+  /**
+   * Defines the visual style of the button.
+   * Available variants are primary, secondary and danger.
+   * @default 'primary'
+   */
   variant = input<ButtonVariant>('primary');
 
-  /** es el texto que se mostrara en el boton */
+  /**
+   * Text displayed inside the button.
+   * @default 'Boton'
+   */
   label = input<string>('Boton');
 
-  /** es el tamaño del boton, puede ser sm, md o lg este le da estilo al boton */
+  /**
+   * Defines the size of the button.
+   * Available sizes are sm, md and lg.
+   * @default 'md'
+   */
   size = input<ButtonSize>('md');
 
-  /** es un booleano que indica si el boton esta deshabilitado o no */
+  /**
+   * Indicates whether the button is disabled.
+   * When true, the button cannot be interacted with.
+   * @default false
+   */
   disabled = input<boolean>(false);
 
-  /** es un booleano que indica si el boton esta cargando o no */
+  /**
+   * Indicates whether the button is in a loading state.
+   * When true, the button displays a loading indicator and blocks clicks.
+   * @default false
+   */
   loading = input<boolean>(false);
 
-  /** es un evento que se emite cuando el boton es clickeado */
+  /**
+   * Event emitted when the button is clicked.
+   * The event is emitted only if the button is neither disabled nor loading.
+   */
   clicked = output<void>();
 
-
-  /** colores de boton segun su variante */
-
+  /**
+   * Computes the CSS classes associated with the selected button variant.
+   * @returns A string containing the Tailwind CSS classes for the variant.
+   */
   variantClasses = computed(() => {
     switch (this.variant()) {
       case 'primary':
@@ -42,11 +71,13 @@ export class UiButton {
 
       case 'danger':
         return 'bg-[#E85D75] text-white hover:bg-[#d44861]';
-      }
+    }
   });
 
- /** diferentes tamaños */
-
+  /**
+   * Computes the CSS classes associated with the selected button size.
+   * @returns A string containing the Tailwind CSS classes for the size.
+   */
   sizeClasses = computed(() => {
     switch (this.size()) {
       case 'sm':
@@ -60,7 +91,11 @@ export class UiButton {
     }
   });
 
-   /** evitar que el boton pueda hacer click si esta deshabilitado o cargando */ 
+  /**
+   * Handles the button click event.
+   * Prevents the event from being emitted when the button is disabled or loading.
+   * Otherwise, emits the clicked event.
+   */
   handleClick(): void {
     if (this.disabled() || this.loading()) {
       return;
@@ -69,4 +104,3 @@ export class UiButton {
     this.clicked.emit();
   }
 }
-

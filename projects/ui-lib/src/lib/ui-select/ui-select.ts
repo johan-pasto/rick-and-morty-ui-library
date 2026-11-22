@@ -1,3 +1,4 @@
+
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,8 +7,14 @@ import {
   output,
 } from '@angular/core';
 
+/**
+ * Represents an available option in the select component.
+ */
 export interface SelectOption {
+  /** Text displayed for the option. */
   label: string;
+
+  /** Value associated with the option. */
   value: string;
 }
 
@@ -20,28 +27,56 @@ export interface SelectOption {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiSelect {
-  /** Opciones disponibles para seleccionar. */
+
+  /**
+   * Available options displayed in the select.
+   * @default []
+   */
   options = input<SelectOption[]>([]);
 
-  /** Etiqueta visible sobre el selector. */
+  /**
+   * Label displayed above the select.
+   * @default ''
+   */
   label = input<string>('');
 
-  /** Texto mostrado cuando no hay una opción seleccionada. */
+  /**
+   * Text displayed when no option is selected.
+   * @default 'Selecciona una opción'
+   */
   placeholder = input<string>('Selecciona una opción');
 
-  /** Indica si el selector está cargando. */
+  /**
+   * Indicates whether the select is in a loading state.
+   * @default false
+   */
   loading = input<boolean>(false);
 
-  /** Bloquea la interacción con el selector. */
+  /**
+   * Indicates whether the select is disabled.
+   * When true, the user cannot interact with the select.
+   * @default false
+   */
   disabled = input<boolean>(false);
 
-  /** Valor seleccionado, sincronizable mediante model(). */
+  /**
+   * Selected value of the select component.
+   * Supports two-way binding through model().
+   * @default null
+   */
   value = model<string | null>(null);
 
-  /** Emite el objeto completo de la opción seleccionada. */
+  /**
+   * Event emitted when an option is selected.
+   * Emits the complete selected option object.
+   */
   selectionChange = output<SelectOption>();
 
-  /** Actualiza el valor y emite la opción seleccionada. */
+  /**
+   * Handles changes in the select element.
+   * Updates the selected value and emits the matching option.
+   * @param event - The DOM event triggered by the select element.
+   */
   handleChange(event: Event): void {
     const selectedValue = (event.target as HTMLSelectElement).value;
 

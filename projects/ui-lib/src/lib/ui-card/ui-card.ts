@@ -1,5 +1,7 @@
-import {ChangeDetectionStrategy, Component, input, output,} from '@angular/core';
 
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+
+/** Available visual elevation styles for the card. */
 export type CardElevation = 'flat' | 'raised' | 'outlined';
 
 @Component({
@@ -11,26 +13,42 @@ export type CardElevation = 'flat' | 'raised' | 'outlined';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiCard {
-  /** Título que se mostrará en el encabezado de la tarjeta. */
+
+  /**
+   * Title displayed in the card header.
+   * @default ''
+   */
   title = input<string>('');
 
-  /** Subtítulo opcional que se mostrará debajo del título. */
+  /**
+   * Optional subtitle displayed below the title.
+   * @default null
+   */
   subtitle = input<string | null>(null);
 
-  /** Estilo visual de elevación de la tarjeta. */
+  /**
+   * Defines the visual elevation style of the card.
+   * @default 'raised'
+   */
   elevation = input<CardElevation>('raised');
 
-  /** Evento emitido cuando se hace clic en el encabezado. */
+  /**
+   * Event emitted when the card header is clicked.
+   */
   headerClicked = output<void>();
 
-  /** Clases visuales correspondientes al nivel de elevación. */
+  /**
+   * CSS classes associated with each card elevation style.
+   */
   elevationClasses: Record<CardElevation, string> = {
     flat: 'shadow-none',
     raised: 'shadow-lg',
     outlined: 'border border-[#97CE4C] shadow-none',
   };
 
-  /** Emite el evento cuando se hace clic en el encabezado. */
+  /**
+   * Emits the headerClicked event when the card header is clicked.
+   */
   handleHeaderClick(): void {
     this.headerClicked.emit();
   }

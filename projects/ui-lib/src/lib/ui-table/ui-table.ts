@@ -1,12 +1,26 @@
-import {ChangeDetectionStrategy, Component, input, output,} from '@angular/core';
 
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+
+/**
+ * Defines the structure of a table column.
+ */
 export interface TableColumn {
+  /** Property key used to retrieve the cell value. */
   key: string;
+
+  /** Text displayed in the column header. */
   header: string;
 }
 
+/**
+ * Represents an action performed on a table row.
+ * @template T - Type of the row data.
+ */
 export type TableAction<T> = {
+  /** Action performed on the row. */
   action: 'view' | 'delete';
+
+  /** Row associated with the action. */
   row: T;
 };
 
@@ -19,30 +33,58 @@ export type TableAction<T> = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiTable<T extends object> {
-  /** Columnas que se mostrarán en la tabla. */
+
+  /**
+   * Columns displayed in the table.
+   * @default []
+   */
   columns = input<TableColumn[]>([]);
 
-  /** Registros que se renderizarán. */
+  /**
+   * Records rendered in the table.
+   * @default []
+   */
   rows = input<T[]>([]);
 
-  /** Indica si la tabla está cargando información. */
+  /**
+   * Indicates whether the table is in a loading state.
+   * @default false
+   */
   loading = input<boolean>(false);
 
-  /** Mensaje que se muestra cuando no hay registros. */
+  /**
+   * Message displayed when the table contains no records.
+   * @default 'No hay registros para mostrar.'
+   */
   emptyMessage = input<string>('No hay registros para mostrar.');
 
-  /** Mensaje de error que se muestra cuando falla la petición. */
+  /**
+   * Error message displayed when a request fails.
+   * @default null
+   */
   errorMessage = input<string | null>(null);
 
-  /** Emite la acción seleccionada junto con el registro correspondiente. */
+  /**
+   * Event emitted when a table action is triggered.
+   * Emits the selected action and its associated row.
+   */
   actionTriggered = output<TableAction<T>>();
 
-  /** Obtiene el valor de una propiedad del registro según la columna. */
+  /**
+   * Retrieves the value of a property from a row using the column key.
+   * @param row - Record from which the property value is retrieved.
+   * @param key - Property key used to access the value.
+   * @returns The property value, or undefined if the property does not exist.
+   */
   getCellValue(row: T, key: string): unknown {
     return (row as unknown as Record<string, unknown>)[key];
   }
 
-  /** Emite una acción sobre el registro seleccionado. */
+  /**
+   * Emits an action associated with the selected row.
+   * @param action - Action to perform, either view or delete.
+   * @param row - Record associated with the action.
+   */
   handleAction(action: 'view' | 'delete', row: T): void {
     this.actionTriggered.emit({ action, row });
   }

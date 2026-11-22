@@ -145,91 +145,91 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 
 # 3.1 — Investigación de la API
 
-- [ ] Revisar la documentación oficial.
-- [ ] Comprender los endpoints de Characters, Episodes y Locations.
-- [ ] Comprender la estructura de las respuestas.
-- [ ] Identificar los parámetros de filtrado.
-- [ ] Identificar los tipos de datos necesarios.
+- [x] Revisar la documentación oficial.
+- [x] Comprender los endpoints de Characters, Episodes y Locations.
+- [x] Comprender la estructura de las respuestas.
+- [x] Identificar los parámetros de filtrado.
+- [x] Identificar los tipos de datos necesarios.
 
 # 3.2 — Modelos y tipado
 
-- [ ] Definir la interfaz Character.
-- [ ] Definir la interfaz Episode.
-- [ ] Definir la interfaz Location.
-- [ ] Definir los tipos necesarios para las respuestas de la API.
-- [ ] Evitar el uso de any.
+- [x] Definir la interfaz Character.
+- [x] Definir la interfaz Episode.
+- [x] Definir la interfaz Location.
+- [x] Definir los tipos necesarios para las respuestas de la API.
+- [x] Evitar el uso de any.
 
 # 3.3 — Servicios
 
-- [ ] Comprender los servicios de Angular.
-- [ ] Comprender la inyección de dependencias.
-- [ ] Comprender HttpClient.
-- [ ] Implementar el servicio de consumo de API.
-- [ ] Implementar la gestión de recursos.
-- [ ] Implementar el filtrado por status.
-- [ ] Gestionar errores de las peticiones.
+- [x] Comprender los servicios de Angular.
+- [x] Comprender la inyección de dependencias.
+- [x] Comprender HttpClient.
+- [x] Implementar el servicio de consumo de API.
+- [x] Implementar la gestión de recursos.
+- [x] Implementar el filtrado por status.
+- [x] Gestionar errores de las peticiones.
 
 **Resultado esperado:** Servicios capaces de consultar los recursos de la API con tipado adecuado.
 
 # Fase 4 — Gestión de estado e integración de la demo
 
-- [ ] Comprender Signals.
-- [ ] Comprender signal, computed y los patrones de actualización.
-- [ ] Crear el servicio de estado de la aplicación.
-- [ ] Gestionar el recurso activo.
-- [ ] Gestionar el filtro.
-- [ ] Gestionar los registros.
-- [ ] Gestionar loading.
-- [ ] Gestionar error.
-- [ ] Integrar ui-select.
-- [ ] Integrar ui-table.
-- [ ] Integrar ui-button.
-- [ ] Integrar ui-card.
-- [ ] Implementar el cambio de recurso.
-- [ ] Implementar el reinicio del filtro.
-- [ ] Implementar el filtrado por status.
-- [ ] Implementar la visualización de detalles.
-- [ ] Implementar la emisión de la acción delete.
+- [x] Comprender Signals.
+- [x] Comprender signal, computed y los patrones de actualización.
+- [x] Crear el servicio de estado de la aplicación.
+- [x] Gestionar el recurso activo.
+- [x] Gestionar el filtro.
+- [x] Gestionar los registros.
+- [x] Gestionar loading.
+- [x] Gestionar error.
+- [x] Integrar ui-select.
+- [x] Integrar ui-table.
+- [x] Integrar ui-button.
+- [x] Integrar ui-card.
+- [x] Implementar el cambio de recurso.
+- [x] Implementar el reinicio del filtro.
+- [x] Implementar el filtrado por status.
+- [x] Implementar la visualización de detalles.
+- [x] Implementar la emisión de la acción delete.
 
 **Resultado esperado:** Flujo principal de la aplicación funcionando con los componentes de la librería y la API.
 
 # Fase 5 — Diseño visual y experiencia de usuario
 
-- [ ] Definir la identidad visual inspirada en Rick and Morty.
-- [ ] Definir paleta de colores.
-- [ ] Definir tipografía.
-- [ ] Definir espaciados.
-- [ ] Diseñar la distribución general de la aplicación.
-- [ ] Implementar responsive design.
-- [ ] Implementar estados hover.
-- [ ] Implementar estados focus.
-- [ ] Implementar estados disabled.
-- [ ] Implementar skeleton loading.
-- [ ] Implementar empty state.
-- [ ] Implementar error state.
-- [ ] Implementar modal de detalles.
-- [ ] Implementar feedback para las acciones.
-- [ ] Revisar la experiencia en mobile y desktop.
+- [x] Definir la identidad visual inspirada en Rick and Morty.
+- [x] Definir paleta de colores.
+- [x] Definir tipografía.
+- [x] Definir espaciados.
+- [x] Diseñar la distribución general de la aplicación.
+- [x] Implementar responsive design.
+- [x] Implementar estados hover.
+- [x] Implementar estados focus.
+- [x] Implementar estados disabled.
+- [x] Implementar skeleton loading.
+- [x] Implementar empty state.
+- [x] Implementar error state.
+- [x] Implementar modal de detalles.
+- [x] Implementar feedback para las acciones.
+- [x] Revisar la experiencia en mobile y desktop.
 
 **Resultado esperado:** Aplicación visualmente coherente, responsive y con estados de interacción definidos.
 
 # Fase 6 — Pruebas y validación
 
-- [ ] Verificar los cuatro componentes.
-- [ ] Verificar el tipado estricto.
-- [ ] Verificar que no exista uso de any.
-- [ ] Verificar la integración de la librería.
-- [ ] Verificar el consumo de la API.
-- [ ] Verificar el cambio de recursos.
-- [ ] Verificar el filtro.
-- [ ] Verificar el estado loading.
-- [ ] Verificar el estado error.
-- [ ] Verificar el estado empty.
-- [ ] Verificar el modal.
-- [ ] Verificar la emisión de delete.
-- [ ] Verificar el responsive design.
-- [ ] Revisar la consola.
-- [ ] Revisar posibles errores de compilación.
+- [x] Verificar los cuatro componentes.
+- [x] Verificar el tipado estricto.
+- [x] Verificar que no exista uso de any.
+- [x] Verificar la integración de la librería.
+- [x] Verificar el consumo de la API.
+- [x] Verificar el cambio de recursos.
+- [x] Verificar el filtro.
+- [x] Verificar el estado loading.
+- [x] Verificar el estado error.
+- [x] Verificar el estado empty.
+- [x] Verificar el modal.
+- [x] Verificar la emisión de delete.
+- [x] Verificar el responsive design.
+- [x] Revisar la consola.
+- [x] Revisar posibles errores de compilación.
 
 **Resultado esperado:** Aplicación funcional y validada frente a los requisitos del reto técnico.
 
@@ -237,32 +237,32 @@ Los componentes se desarrollarán de manera progresiva. Cada componente tendrá 
 
 # Documentación
 
-- [ ] Crear README.md.
-- [ ] Documentar la arquitectura.
-- [ ] Documentar instalación y ejecución.
-- [ ] Documentar la API de los componentes.
-- [ ] Documentar ejemplos de uso.
-- [ ] Documentar decisiones de diseño.
-- [ ] Revisar JSDoc de los componentes.
-- [ ] Actualizar DEVELOPMENT_LOG.md.
-- [ ] Actualizar AI_USAGE.md.
+- [x] Crear README.md.
+- [x] Documentar la arquitectura.
+- [x] Documentar instalación y ejecución.
+- [x] Documentar la API de los componentes.
+- [x] Documentar ejemplos de uso.
+- [x] Documentar decisiones de diseño.
+- [x] Revisar JSDoc de los componentes.
+- [x] Actualizar DEVELOPMENT_LOG.md.
+- [x] Actualizar AI_USAGE.md.
 
 # Git y repositorio
 
-- [ ] Revisar el historial de commits.
-- [ ] Revisar la estructura del repositorio.
-- [ ] Verificar que los archivos necesarios estén incluidos.
-- [ ] Verificar que no se suban archivos innecesarios.
-- [ ] Verificar que el repositorio pueda clonarse y ejecutarse.
+- [x] Revisar el historial de commits.
+- [x] Revisar la estructura del repositorio.
+- [x] Verificar que los archivos necesarios estén incluidos.
+- [x] Verificar que no se suban archivos innecesarios.
+- [x] Verificar que el repositorio pueda clonarse y ejecutarse.
 
 # Entrega
 
-- [ ] Preparar el repositorio de GitHub.
-- [ ] Preparar el video explicativo.
-- [ ] Explicar la arquitectura.
-- [ ] Explicar los componentes.
-- [ ] Explicar las decisiones técnicas.
-- [ ] Verificar las instrucciones finales de entrega.
+- [x] Preparar el repositorio de GitHub.
+- [x] Preparar el video explicativo.
+- [x] Explicar la arquitectura.
+- [x] Explicar los componentes.
+- [x] Explicar las decisiones técnicas.
+- [x] Verificar las instrucciones finales de entrega.
 
 **Resultado esperado:** Proyecto documentado, funcional y listo para ser presentado.
 
@@ -273,7 +273,7 @@ Los siguientes elementos no son prioritarios y solo se implementarán si los req
 - [ ] Pruebas unitarias con Jest o Vitest.
 - [ ] Storybook.
 - [ ] Publicación en npm o GitHub Packages.
-- [ ] Despliegue de la demo en Vercel, Netlify o GitHub Pages.
+- [x] Despliegue de la demo en Vercel, Netlify o GitHub Pages.
 
 # 6. Metodología de trabajo
 
